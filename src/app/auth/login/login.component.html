@@ -1,0 +1,16 @@
+<form fxLayout="column" fxLayoutGap="20px" [formGroup]="loginForm.formGroup" (ngSubmit)="login()" novalidate> 
+  <p class="mat-input-error" *ngIf="error">{{error.message}}</p>
+  <!-- Email -->
+  <md-input-container>
+    <input type="text" name="Email" placeholder="Email" formControlName="email" mdInput>
+    <md-error *ngIf="loginForm.errors.email">{{ loginForm.errors.email }}</md-error>
+  </md-input-container>
+  <!-- Password -->
+  <md-input-container>
+    <input type="password" name="Password" placeholder="Password" formControlName="password" mdInput>
+    <md-error *ngIf="loginForm.errors.password">{{ loginForm.errors.password }}</md-error>
+  </md-input-container>
+  <button md-raised-button color="primary">Login</button>
+  <a href="#">Having trouble logging in?</a>
+</form>
+
