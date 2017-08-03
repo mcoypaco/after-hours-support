@@ -15,7 +15,7 @@ export class AuthService {
   }
 
   // store the URL so we can redirect after logging in
-  redirectUrl: string;
+  redirectUrl: string = '/';
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -37,6 +37,10 @@ export class AuthService {
         }
       )
       .catch(this.handleError);
+  }
+
+  intendedRoute() : void {
+    this.router.navigate([this.redirectUrl]);
   }
 
   private handleError(error: any): Promise<any> {
