@@ -1,4 +1,9 @@
 <p class="mat-body-1">
-  You are logged in!
+  You are logged in, <span *ngIf="user">{{ user.name }}</span>!
 </p>
+Here is what you can do:
+<ul *ngIf="user">
+  <li *ngFor="let role of user.roles">{{role.description}}</li>
+</ul>
+
 <button md-raised-button color="primary" (click)="logout()">Logout</button>
