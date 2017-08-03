@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, CanLoad, Route, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 
 import { AuthService } from './auth.service';
 
@@ -32,9 +31,7 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   checkLogin(url: string): boolean {
-    // Redirect back if user is already authenticated
     if (this.authService.isLoggedIn()) {
-      this.router.navigate([url = '/login' ? '' : url ]);
       return true; 
     }
 
