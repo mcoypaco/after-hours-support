@@ -10,11 +10,11 @@ const routes: Routes = [
   { 
     path: 'login',
     component: AuthComponent,
-    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path:'',
-        component: LoginComponent 
+        component: LoginComponent ,
       }
     ],
   },

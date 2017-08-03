@@ -33,8 +33,8 @@ export class AuthGuard implements CanActivate, CanLoad {
 
   checkLogin(url: string): boolean {
     // Redirect back if user is already authenticated
-    if (this.authService.isLoggedIn()) { 
-      this.router.navigate([url]);
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate([url = '/login' ? '' : url ]);
       return true; 
     }
 
