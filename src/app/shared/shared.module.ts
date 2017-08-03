@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MdButtonModule, MdCardModule, MdInputModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdInputModule, MdProgressSpinnerModule } from '@angular/material';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   imports: [
@@ -11,9 +12,12 @@ import { MdButtonModule, MdCardModule, MdInputModule } from '@angular/material';
     HttpClientModule,
     FlexLayoutModule,
     FormsModule,
+    MdButtonModule,
+    MdCardModule,
+    MdInputModule,
+    MdProgressSpinnerModule,
     ReactiveFormsModule,
   ],
-  declarations: [],
   exports: [
     CommonModule,
     HttpClientModule,
@@ -22,7 +26,11 @@ import { MdButtonModule, MdCardModule, MdInputModule } from '@angular/material';
     MdButtonModule,
     MdCardModule,
     MdInputModule,
+    MdProgressSpinnerModule,
     ReactiveFormsModule,
-  ]
+
+    ErrorComponent
+  ],
+  declarations: [ErrorComponent]
 })
 export class SharedModule { }

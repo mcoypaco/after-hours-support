@@ -13,6 +13,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     SharedModule,
   ],
   declarations: [PageNotFoundComponent],
-  providers: [FormValidationMessageService]
+  providers: [FormValidationMessageService],
 })
 export class CoreModule { }

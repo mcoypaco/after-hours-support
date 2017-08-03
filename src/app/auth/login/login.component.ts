@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { LoginFormService } from '../login-form.service';
 import { AuthService } from '../auth.service';
@@ -10,19 +9,28 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  error : object;
+  error: object;
+  busy: boolean = false;
 
-  constructor(private loginForm: LoginFormService, private authService: AuthService, private router: Router) { }
+  constructor(private loginForm: LoginFormService, private authService: AuthService) { }
 
   login() : void {
     const email = this.loginForm.formGroup.get('email').value;
     const password = this.loginForm.formGroup.get('password').value;
 
-    if(this.loginForm.formGroup.valid) {
+    if(this.loginForm.formGroup.valid && !this.busy) {
+      this.busy = true;
+
       this.authService
         .login(email, password)
-        .then(resp => this.router.navigate(['']))
-        .catch(error => this.error = error);
+        .then(resp => { 
+          this.busy = false;
+          this.authService.intendedRoute();
+        })
+        .catch(error => {
+          this.busy = false;
+          this.error = error;
+        })
     }
   }
 }

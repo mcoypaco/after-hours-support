@@ -1,5 +1,6 @@
 <form fxLayout="column" fxLayoutGap="20px" [formGroup]="loginForm.formGroup" (ngSubmit)="login()" novalidate> 
-  <p class="mat-input-error" *ngIf="error">{{error.message}}</p>
+  <!-- Server response error  -->
+  <app-error [message]="error.message" *ngIf="error && !busy"></app-error>
   <!-- Email -->
   <md-input-container>
     <input type="text" name="Email" placeholder="Email" formControlName="email" mdInput>
@@ -10,7 +11,11 @@
     <input type="password" name="Password" placeholder="Password" formControlName="password" mdInput>
     <md-error *ngIf="loginForm.errors.password">{{ loginForm.errors.password }}</md-error>
   </md-input-container>
-  <button md-raised-button color="primary">Login</button>
-  <a href="#">Having trouble logging in?</a>
+
+  <div fxLayout="column" fxLayoutGap="20px" *ngIf="!busy">
+    <button md-raised-button color="primary">Login</button>
+    <a href="#">Having trouble logging in?</a>
+  </div>
+  <md-spinner *ngIf="busy"></md-spinner>
 </form>
 
