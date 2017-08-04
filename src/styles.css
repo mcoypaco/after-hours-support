@@ -6,8 +6,13 @@ body {
    height: 100vh;
    max-height: 100vh;
    background: #eceff1;
+   margin:0px;
 }
 
 a {
     text-decoration: none;
+}
+
+.grey-color {
+    color:#6b6b6b;
 }

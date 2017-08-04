@@ -1,0 +1,41 @@
+<md-sidenav-container class="sidenav-container">
+    <md-sidenav #sidenav mode="side" opened="true">
+        <!-- Todo: enable routes  -->
+        <md-list>
+            <md-list-item>
+                <md-icon md-list-icon class="material-icons grey-color">dashboard</md-icon>
+                <h4 md-line class="grey-color">Dashboard</h4>
+            </md-list-item>
+            
+            <md-divider></md-divider>
+            
+            <h3 md-subheader>Compose</h3>
+            <md-list-item>
+                <md-icon md-list-icon class="material-icons grey-color">playlist_add_check</md-icon>
+                <h4 md-line class="grey-color">Evaluation</h4>
+            </md-list-item>
+            <md-list-item>
+                <md-icon md-list-icon class="material-icons grey-color">question_answer</md-icon>
+                <h4 md-line class="grey-color">Questionnaires</h4>
+            </md-list-item>
+            
+            
+            <md-divider></md-divider>
+            
+            <h3 md-subheader>Manage</h3>
+            <md-list-item>
+                <md-icon md-list-icon class="material-icons grey-color">supervisor_account</md-icon>
+                <h4 md-line class="grey-color">Agents</h4>
+            </md-list-item>
+            <md-list-item>
+                <md-icon md-list-icon class="material-icons grey-color">apps</md-icon>
+                <h4 md-line class="grey-color">Campaign</h4>
+            </md-list-item>
+            <md-list-item>
+                <md-icon md-list-icon class="material-icons grey-color">domain</md-icon>
+                <h4 md-line class="grey-color">Teams</h4>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <router-outlet></router-outlet>
+</md-sidenav-container>
