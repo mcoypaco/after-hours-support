@@ -1,10 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import 'rxjs/add/operator/toPromise';
-
-import { AuthService } from '../auth/auth.service';
-import { environment } from '../../environments/environment';
-import { User } from '../user';
 
 @Component({
   selector: 'app-home',
@@ -13,21 +7,10 @@ import { User } from '../user';
 })
 export class HomeComponent implements OnInit {
 
-  user: User;
 
-  constructor(private authService: AuthService, private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
-    this.http
-      .get<User>(`${environment.apiUrl}/api/user`, {
-        headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.access_token}`)
-      })
-      .toPromise()
-      .then(data => this.user = data);
+    
   }
-
-  logout() {
-    this.authService.logout();
-  }
-
 }

@@ -5,19 +5,41 @@ import 'rxjs/add/operator/toPromise';
 
 import { Token } from './token';
 import { environment } from '../../environments/environment';
+import { User } from '../user';
 
 const { client_id, client_secret } = environment.passwordGrant;
 
 @Injectable()
 export class AuthService {
-  isLoggedIn() : boolean {
-    return localStorage.access_token ? true : false;
-  }
-
+  user : User;
+  
   // store the URL so we can redirect after logging in
   redirectUrl: string = '/';
 
   constructor(private http: HttpClient, private router: Router) { }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error);
+    return Promise.reject(error.error);
+  }
+
+  checkUser() : Promise<User> {
+    return this.http
+      .get<User>(`${environment.apiUrl}/api/user`, {
+        headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.access_token}`)
+      })
+      .toPromise()
+      .then(data => this.user = data)
+      .catch(this.handleError)
+  }
+  
+  intendedRoute() : void {
+    this.router.navigate([this.redirectUrl]);
+  }
+
+  isLoggedIn() : boolean {
+    return localStorage.access_token ? true : false;
+  }
 
   login(username: string, password: string) : Promise<boolean> {
     const body = {
@@ -37,15 +59,6 @@ export class AuthService {
         }
       )
       .catch(this.handleError);
-  }
-
-  intendedRoute() : void {
-    this.router.navigate([this.redirectUrl]);
-  }
-
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error);
-    return Promise.reject(error.error);
   }
 
   logout(): void {

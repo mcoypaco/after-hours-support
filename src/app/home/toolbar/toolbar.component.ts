@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { SidenavService } from '../sidenav.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,10 +9,20 @@ import { SidenavService } from '../sidenav.service';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-
-  constructor(private sidenavService:SidenavService) { }
+  user : string;
+  
+  constructor(private sidenavService:SidenavService, private authService: AuthService) { }
 
   ngOnInit() {
-    
+    this.authService.checkUser()
+      .then(user => this.user = user.name);
+  }
+
+  toggleSidenav() {
+    this.sidenavService.toggle();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

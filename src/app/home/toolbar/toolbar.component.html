@@ -1,8 +1,7 @@
 <md-toolbar color="primary">
     <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
         <div>
-            <!-- Todo: toggle the sidenav  -->
-            <button fxHide.gt-xs md-icon-button (click)="sidenavService.toggle()">
+            <button fxHide.gt-xs md-icon-button (click)="toggle()">
                 <md-icon class="material-icons">menu</md-icon>
             </button>
             <button md-button routerLink="/">
@@ -13,13 +12,12 @@
             <button md-button [mdMenuTriggerFor]="menu">
                 <md-icon class="material-icons">account_circle</md-icon>
                 <!-- Todo: attach the authenticated user's name  -->
-                User Account
+                {{ user }} 
             </button>
             <md-menu #menu="mdMenu" >
                 <!-- Todo: add change password function -->
                 <button md-menu-item>Change Password</button>
-                <!-- Todo: add change sign out function -->
-                <button md-menu-item>Sign out</button>
+                <button md-menu-item (click)="logout()">Logout</button>
             </md-menu>
         </div>
     </div>
