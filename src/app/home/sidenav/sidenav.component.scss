@@ -1,0 +1,21 @@
+md-sidenav-container {
+    height: 100%;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background: #3f51b5;
+    md-icon,  h4 {
+        color: white;
+    }
+}
+
+.nav-item.active {
+    background: white !important;
+    md-icon, h4 {
+        color: #3f51b5 !important;
+    }
+}

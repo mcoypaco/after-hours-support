@@ -1,11 +1,13 @@
 import { Component, ViewChild, HostListener, OnInit } from '@angular/core';
 import { MdSidenav } from '@angular/material';
+
+import { AuthService } from '../../auth/auth.service';
 import { SidenavService } from '../sidenav.service';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit{
   @ViewChild('sidenav') sidenav: MdSidenav
@@ -19,11 +21,11 @@ export class SidenavComponent implements OnInit{
       }
   }
 
-  constructor(private sidenavService: SidenavService) { }
+  constructor(private sidenavService: SidenavService, private authService: AuthService) { }
 
   ngOnInit(){
     this.sidenavService.sidenav = this.sidenav;
-    
+    // Todo: check user roles and display allowed modules
   }
-
+  
 }
