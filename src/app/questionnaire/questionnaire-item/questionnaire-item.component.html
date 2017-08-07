@@ -1,0 +1,51 @@
+<div class="app-container">
+  <md-toolbar>
+    <span>New Template</span>
+    <md-toolbar-row>
+      <button md-button color="primary">
+        Save
+      </button>
+      <button md-button color="primary">
+        Save As
+      </button>
+    </md-toolbar-row>
+  </md-toolbar> 
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="content">
+    <div fxLayout="column" fxFlex.gt.xs="100" fxFlex.md="60" fxFlex.lg="50" fxFlex.xl="40">
+      <md-card>
+        <md-card-title>
+          Category - Title
+        </md-card-title>
+        <md-card-subtitle>
+          12 points
+        </md-card-subtitle>
+        <md-card-content>    
+          <md-list>
+            <h3 md-subheader>Questions</h3>
+            <md-list-item>
+              <h4 md-line>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ex, natus sed assumenda consectetur soluta ipsam quam vero fuga quos sequi in, perferendis rerum, nihil eveniet doloribus, fugiat hic deleniti?</h4>
+              <p md-line>6 points</p>
+            </md-list-item>
+            <md-list-item>
+              <h4 md-line>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ex, natus sed assumenda consectetur soluta ipsam quam vero fuga quos sequi in, perferendis rerum, nihil eveniet doloribus, fugiat hic deleniti?</h4>
+              <p md-line>6 points</p>
+            </md-list-item>
+          </md-list> 
+        </md-card-content>
+        <md-card-actions fxLayout="row" fxLayoutAlign="end center">
+          <button md-icon-button mdTooltip="Edit Category">
+            <md-icon class="material-icon grey-color">edit</md-icon>
+          </button>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </div>
+
+  <button md-fab class="md-fab-bottom-right" mdTooltip="Category" [mdTooltipPosition]="'above'">
+    <md-icon class="material-icon">add</md-icon>
+  </button>
+</div>
+
+
+

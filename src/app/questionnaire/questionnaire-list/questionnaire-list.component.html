@@ -1,5 +1,5 @@
 <md-toolbar>
-  <span>Agents</span>
+  <span>Questionnaires</span>
 </md-toolbar> 
 
 <div fxLayout="row" fxLayoutAlign="center center" class="content">
@@ -12,9 +12,9 @@
       </md-card-subtitle>
       <md-card-content>    
         <md-list>
-          <md-list-item *ngFor="let agent of agents">
-            <h4 md-line>{{agent.employee_number}}</h4>
-            <p md-line>{{agent.name}}</p>
+          <md-list-item class="item-clickable" *ngFor="let questionnaire of questionnaires" routerLink="/questionnaires/{{questionnaire.id}}">
+            <h4 md-line>{{questionnaire.name}}</h4>
+            <p md-line>{{questionnaire.created_at | amTimeAgo:true}}</p>
           </md-list-item>
         </md-list>
 

@@ -1,14 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
+
+import { MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdListModule, MdPaginatorModule, MdToolbarModule, MdTooltipModule } from '@angular/material';
 
 import { QuestionnaireRoutingModule } from './questionnaire-routing.module';
-import { QuestionnairesListComponent } from './questionnaires-list/questionnaires-list.component';
+import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-item.component';
+import { QuestionnaireListComponent } from './questionnaire-list/questionnaire-list.component';
+import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+    MdButtonModule,
+    MdCardModule,
+    MdIconModule,
+    MdInputModule,
+    MdListModule,
+    MdPaginatorModule,
+    MdToolbarModule,
+    MdTooltipModule,
+    SharedModule,
     QuestionnaireRoutingModule
   ],
-  declarations: [QuestionnairesListComponent]
+  declarations: [QuestionnaireItemComponent, QuestionnaireListComponent, QuestionnaireComponent]
 })
 export class QuestionnaireModule { }

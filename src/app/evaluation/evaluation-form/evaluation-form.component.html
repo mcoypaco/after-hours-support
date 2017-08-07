@@ -1,3 +1,99 @@
-<p>
-  evaluation-form works!
-</p>
+<div class="app-container">
+  <md-toolbar>
+    <span>Evaluation</span>
+  </md-toolbar> 
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="content">
+    <div fxLayout="column" fxFlex.gt.xs="100" fxFlex.md="80" fxFlex.lg="70" fxFlex.xl="60" fxLayoutGap="20px">
+      <md-card>
+        <md-card-subtitle>Details</md-card-subtitle>
+        <md-card-content fxLayoutGap="20px">
+          <md-input-container fxFlex>
+            <input type="text" mdInput placeholder="Name">
+          </md-input-container>
+          
+          <md-input-container fxFlex>
+            <input type="text" mdInput placeholder="Campaign">
+          </md-input-container>
+
+          <md-input-container fxFlex>
+            <input type="text" mdInput placeholder="Team">
+          </md-input-container>
+
+          <md-input-container fxFlex>
+            <input type="text" mdInput placeholder="Work Queue">
+          </md-input-container>
+        </md-card-content>
+      </md-card>
+      <md-card>
+        <md-card-title>
+          Category - Item 1
+        </md-card-title>
+        <md-card-content fxLayout="column" fxLayoutGap="50px">
+          <div fxLayout="column" fxLayoutGap="30px">
+            <p class="mat-body-1" fxFlex>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quasi dolore voluptas inventore asperiores reiciendis velit voluptate in facilis consequuntur atque eum numquam quam, sit necessitatibus nostrum labore similique! Quos.</p>
+
+            <md-radio-group fxLayout="row" fxFlex>
+              <md-radio-button fxFlex value="1">Yes</md-radio-button>
+              <md-radio-button fxFlex value="2">No</md-radio-button>
+              <md-radio-button fxFlex value="2">Not Applicable</md-radio-button>
+            </md-radio-group>
+
+            <md-input-container fxFlex>
+              <input type="text" mdInput placeholder="Remarks">
+            </md-input-container>
+          </div>
+          
+          <div fxLayout="column" fxLayoutGap="30px">
+            <p class="mat-body-1" fxFlex>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quasi dolore voluptas inventore asperiores reiciendis velit voluptate in facilis consequuntur atque eum numquam quam, sit necessitatibus nostrum labore similique! Quos.</p>
+
+            <md-radio-group fxLayout="row" fxFlex>
+              <md-radio-button fxFlex value="1">Yes</md-radio-button>
+              <md-radio-button fxFlex value="2">No</md-radio-button>
+              <md-radio-button fxFlex value="2">Not Applicable</md-radio-button>
+            </md-radio-group>
+
+            <md-input-container fxFlex>
+              <input type="text" mdInput placeholder="Remarks">
+            </md-input-container>
+          </div>
+
+          <div fxLayout="column" fxLayoutGap="30px">
+            <p class="mat-body-1" fxFlex>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quasi dolore voluptas inventore asperiores reiciendis velit voluptate in facilis consequuntur atque eum numquam quam, sit necessitatibus nostrum labore similique! Quos.</p>
+
+            <md-radio-group fxLayout="row" fxFlex>
+              <md-radio-button fxFlex value="1">Yes</md-radio-button>
+              <md-radio-button fxFlex value="2">No</md-radio-button>
+              <md-radio-button fxFlex value="2">Not Applicable</md-radio-button>
+            </md-radio-group>
+
+            <md-input-container fxFlex>
+              <input type="text" mdInput placeholder="Remarks">
+            </md-input-container>
+          </div>
+
+          <div fxLayout="column" fxLayoutGap="30px">
+            <p class="mat-body-1" fxFlex>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quasi dolore voluptas inventore asperiores reiciendis velit voluptate in facilis consequuntur atque eum numquam quam, sit necessitatibus nostrum labore similique! Quos.</p>
+
+            <md-radio-group fxLayout="row" fxFlex>
+              <md-radio-button fxFlex value="1">Yes</md-radio-button>
+              <md-radio-button fxFlex value="2">No</md-radio-button>
+              <md-radio-button fxFlex value="2">Not Applicable</md-radio-button>
+            </md-radio-group>
+
+            <md-input-container fxFlex>
+              <input type="text" mdInput placeholder="Remarks">
+            </md-input-container>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+
+  <button md-fab class="md-fab-bottom-right" mdTooltip="Submit" [mdTooltipPosition]="'above'">
+    <md-icon class="material-icon">check</md-icon>
+  </button>
+</div>
+
+
+

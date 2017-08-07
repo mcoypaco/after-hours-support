@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { QuestionnairesListComponent } from './questionnaires-list/questionnaires-list.component';
+import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
+import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-item.component';
+import { QuestionnaireListComponent } from './questionnaire-list/questionnaire-list.component';
 
 const routes: Routes = [
-  { path: '', component:QuestionnairesListComponent },
+  { 
+    path: '',
+    component:QuestionnaireComponent,
+    children: [
+      {
+        path: '',
+        component: QuestionnaireListComponent,
+      },
+      {
+        path: ':id',
+        component: QuestionnaireItemComponent
+      },
+    ]
+  },
 ];
 
 @NgModule({

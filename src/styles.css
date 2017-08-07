@@ -34,3 +34,13 @@ app-page-not-found {
     bottom: 9vh !important;
     right: 3vh !important;
 }
+
+.item-clickable {
+    cursor: pointer;
+}
+
+.app-container {
+    max-height: 100%;
+    overflow: auto;
+    /* padding-bottom: 50px; */
+}
