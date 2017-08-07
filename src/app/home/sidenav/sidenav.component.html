@@ -1,14 +1,7 @@
 <md-sidenav-container class="sidenav-container">
     <md-sidenav #sidenav mode="side" opened="true">
-        <!-- Todo: enable routes  -->
-        <md-list>
-            <md-list-item class="nav-item" routerLink="/" routerLinkActive="active" (click)="test()">
-                <md-icon md-list-icon class="material-icons grey-color">dashboard</md-icon>
-                <h4 md-line class="grey-color">Dashboard</h4>
-            </md-list-item>
-            
-            <md-divider></md-divider>
-            
+        <!-- Todo: route authorization  -->
+        <md-list>            
             <h3 md-subheader>Compose</h3>
             <md-list-item class="nav-item" routerLink="/evaluation" routerLinkActive="active">
                 <md-icon md-list-icon class="material-icons grey-color">playlist_add_check</md-icon>
@@ -22,21 +15,21 @@
             <md-divider></md-divider>
             
             <h3 md-subheader>Manage</h3>
-            <md-list-item class="nav-item" routerLink="/agents" routerLinkActive="active">
+            <md-list-item class="nav-item" routerLink="/settings/agents" routerLinkActive="active">
                 <md-icon md-list-icon class="material-icons grey-color">supervisor_account</md-icon>
                 <h4 md-line class="grey-color">Agents</h4>
             </md-list-item>
-            <md-list-item class="nav-item" routerLink="/campaign" routerLinkActive="active">
+            <md-list-item class="nav-item" routerLink="/settings/campaigns" routerLinkActive="active">
                 <md-icon md-list-icon class="material-icons grey-color">apps</md-icon>
-                <h4 md-line class="grey-color">Campaign</h4>
+                <h4 md-line class="grey-color">Campaigns</h4>
             </md-list-item>
-            <md-list-item class="nav-item" routerLink="/teams" routerLinkActive="active">
+            <md-list-item class="nav-item" routerLink="/settings/teams" routerLinkActive="active">
                 <md-icon md-list-icon class="material-icons grey-color">domain</md-icon>
                 <h4 md-line class="grey-color">Teams</h4>
             </md-list-item>
-            <md-list-item class="nav-item" routerLink="/work-queue" routerLinkActive="active">
+            <md-list-item class="nav-item" routerLink="/settings/work-queues" routerLinkActive="active">
                 <md-icon md-list-icon class="material-icons grey-color">add_to_queue</md-icon>
-                <h4 md-line class="grey-color">Work Queue</h4>
+                <h4 md-line class="grey-color">Work Queues</h4>
             </md-list-item>
         </md-list>
     </md-sidenav>

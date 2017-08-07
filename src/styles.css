@@ -24,3 +24,13 @@ a {
 app-page-not-found {
     height: 100%;
 }
+
+.content { 
+    padding:20px;
+}
+
+.md-fab-bottom-right {
+    position: fixed !important;
+    bottom: 9vh !important;
+    right: 3vh !important;
+}

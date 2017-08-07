@@ -14,6 +14,21 @@ const routes: Routes = [
         loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
         canLoad: [AuthGuard]
       },
+      {
+        path:'evaluation',
+        loadChildren: 'app/evaluation/evaluation.module#EvaluationModule',
+        canLoad: [AuthGuard]
+      },
+      {
+        path:'questionnaires',
+        loadChildren: 'app/questionnaire/questionnaire.module#QuestionnaireModule',
+        canLoad: [AuthGuard]
+      },
+      {
+        path:'settings',
+        loadChildren: 'app/settings/settings.module#SettingsModule',
+        canLoad: [AuthGuard]
+      },
     ]
   }
 ];

@@ -5,8 +5,15 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-    { path:'', loadChildren:'app/home/home.module#HomeModule', canLoad:[AuthGuard] },
-    { path:'**', component:PageNotFoundComponent },
+    { 
+      path:'',
+      loadChildren:'app/home/home.module#HomeModule', 
+      canLoad:[AuthGuard] 
+    },
+    { 
+      path:'**', 
+      component:PageNotFoundComponent 
+    },
 ];
 
 @NgModule({

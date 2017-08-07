@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { Token } from './token';
 import { environment } from '../../environments/environment';
-import { User } from '../user';
+import { User } from '../models/user';
 
 const { client_id, client_secret } = environment.passwordGrant;
 
