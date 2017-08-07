@@ -11,7 +11,7 @@ const { client_id, client_secret } = environment.passwordGrant;
 
 @Injectable()
 export class AuthService {
-  user : User;
+  user : User = JSON.parse(localStorage.getItem('user'));
   
   // store the URL so we can redirect after logging in
   redirectUrl: string = '/';
@@ -23,14 +23,16 @@ export class AuthService {
     return Promise.reject(error.error);
   }
 
-  checkUser() : Promise<User> {
+  checkUser() : Promise<void> {
     return this.http
       .get<User>(`${environment.apiUrl}/api/user`, {
         headers: new HttpHeaders().set('Authorization', `Bearer ${localStorage.access_token}`)
       })
       .toPromise()
-      .then(data => this.user = data)
-      .catch(this.handleError)
+      .then(data => {
+        this.user = data;
+        localStorage.setItem('user', JSON.stringify(data));
+      })
   }
   
   intendedRoute() : void {
@@ -54,15 +56,19 @@ export class AuthService {
       .post<Token>(`${environment.apiUrl}/oauth/token`, body)
       .toPromise()
       .then(data => {
-          localStorage.setItem('access_token', data.access_token)
+          localStorage.setItem('access_token', data.access_token);
           return true;
         }
       )
+      .then(() => {
+        return this.checkUser();
+      })
       .catch(this.handleError);
   }
 
   logout(): void {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
 }

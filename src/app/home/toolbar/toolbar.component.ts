@@ -14,8 +14,7 @@ export class ToolbarComponent implements OnInit {
   constructor(private sidenavService:SidenavService, private authService: AuthService) { }
 
   ngOnInit() {
-    this.authService.checkUser()
-      .then(user => this.user = user.name);
+    this.user = this.authService.user.name;
   }
 
   toggleSidenav() {
