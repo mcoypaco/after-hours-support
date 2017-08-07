@@ -16,3 +16,11 @@ a {
 .grey-color {
     color:#6b6b6b;
 }
+
+.primary-color{
+    color: #3f51b5;
+}
+
+app-page-not-found {
+    height: 100%;
+}
