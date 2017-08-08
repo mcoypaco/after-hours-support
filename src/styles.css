@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 body {
@@ -11,6 +12,10 @@ body {
 
 a {
     text-decoration: none;
+}
+
+label {
+    font-weight: normal;
 }
 
 .grey-color {
@@ -43,4 +48,8 @@ app-page-not-found {
     max-height: 100%;
     overflow: auto;
     /* padding-bottom: 50px; */
+}
+
+th, td {
+    text-align: center;
 }
