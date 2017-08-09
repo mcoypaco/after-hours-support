@@ -3,21 +3,21 @@ import { PageEvent } from '@angular/material';
 import { Observable } from 'rxjs';
 import { Subject }    from 'rxjs/Subject';
 
-import { Settings } from './settings';
-
 @Injectable()
-export class SettingsService implements Settings {
+export class SettingsService {
   model: string;
   perPage : number;
   state: string;
   term: string;
   total: number;
-  
-  constructor() { }
-  
-  add() { }
 
   private pageEventSource = new Subject<any>();
+  
+  constructor() { }
+
+  // Todo: Dialog form for creating agent
+  add() { }
+
 
   sendPageEvent(pageEvent: PageEvent) {
     this.pageEventSource.next(pageEvent);
@@ -28,12 +28,4 @@ export class SettingsService implements Settings {
   }
 
   // search() { }
-
-  // add()  { }
-
-  // paging(pageEvent: PageEvent){
-    
-  // }
-
-
 }
