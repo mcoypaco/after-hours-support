@@ -1,0 +1,34 @@
+<div class="app-container">
+  <md-toolbar>
+    <span>{{ settings.state }}</span>
+  </md-toolbar> 
+  <div fxLayout="row" fxLayoutAlign="center center" class="content">
+    <div fxLayout="column" fxFlex.gt.xs="100" fxFlex.md="60" fxFlex.lg="50" fxFlex.xl="40">
+      <md-card>
+        <md-card-subtitle fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxFlex.xs="100" fxFlex.sm="100" fxFlex="50" fxLayout="row" fxLayoutAlign="start center">
+            <md-input-container fxFlex>
+              <input type="text" mdInput placeholder="Search" [(ngModel)]="settings.term">
+            </md-input-container>
+            <button md-icon-button (click)="settings.search()">
+              <md-icon class="material-icon">search</md-icon>
+            </button>
+          </div>
+          <button md-raised-button color="accent" (click)="settings.add()">Add {{settings.model}}</button>
+        </md-card-subtitle>
+        <!-- List -->
+        <md-card-content>
+          <router-outlet></router-outlet>
+        </md-card-content>
+        <!-- Paginator -->
+        <md-card-actions fxLayout="row" *ngIf="settings.total">
+          <md-paginator [length]="settings.total" [pageSize]="settings.perPage" (page)="settings.paging($event)"></md-paginator>
+        </md-card-actions>
+      </md-card>
+    </div>
+    <!-- FAB -->
+    <button md-fab class="md-fab-bottom-right" mdTooltip="{{settings.model}}" [mdTooltipPosition]="'above'">
+      <md-icon class="material-icon">add</md-icon>
+    </button>
+  </div>
+</div>

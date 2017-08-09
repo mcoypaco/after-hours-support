@@ -3,11 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AgentsComponent } from './agents/agents.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
+import { SettingsComponent } from './settings.component';
 import { TeamsComponent } from './teams/teams.component';
 import { WorkQueuesComponent } from './work-queues/work-queues.component';
 
 const routes: Routes = [
-  { path: 'agents', component: AgentsComponent },
+  { 
+    path: 'agents',
+    component: SettingsComponent,
+    children: [
+      {
+        path: '',
+        component: AgentsComponent,
+      }
+    ]
+  },
   { path: 'campaigns', component: CampaignsComponent },
   { path: 'teams', component: TeamsComponent },
   { path: 'work-queues', component: WorkQueuesComponent },
