@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { PageEvent } from '@angular/material';
 import { SettingsService } from './settings.service';
 
 @Component({
@@ -7,9 +7,10 @@ import { SettingsService } from './settings.service';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent {
   constructor(private settings: SettingsService) { }
 
-  ngOnInit() {
+  sendPageEvent(pageEvent: PageEvent) : void {
+    this.settings.sendPageEvent(pageEvent);
   }
 }

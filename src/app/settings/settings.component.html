@@ -10,7 +10,7 @@
             <md-input-container fxFlex>
               <input type="text" mdInput placeholder="Search" [(ngModel)]="settings.term">
             </md-input-container>
-            <button md-icon-button (click)="settings.search()">
+            <button md-icon-button (click)="search()">
               <md-icon class="material-icon">search</md-icon>
             </button>
           </div>
@@ -22,12 +22,12 @@
         </md-card-content>
         <!-- Paginator -->
         <md-card-actions fxLayout="row" *ngIf="settings.total">
-          <md-paginator [length]="settings.total" [pageSize]="settings.perPage" (page)="settings.paging($event)"></md-paginator>
+          <md-paginator [length]="settings.total" [pageSize]="settings.perPage" (page)="sendPageEvent($event)"></md-paginator>
         </md-card-actions>
       </md-card>
     </div>
     <!-- FAB -->
-    <button md-fab class="md-fab-bottom-right" mdTooltip="{{settings.model}}" [mdTooltipPosition]="'above'">
+    <button md-fab class="md-fab-bottom-right" mdTooltip="{{settings.model}}" [mdTooltipPosition]="'above'" (click)="settings.add()">
       <md-icon class="material-icon">add</md-icon>
     </button>
   </div>
