@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/map';
 
-import { Paginated } from '../../interfaces/paginated';
+import { Agent } from '../../models/agent';
 import { ApiService } from '../../shared/api.service';
-// import { AgentsSettingsService } from './agents-settings.service';
+import { Paginated } from '../../interfaces/paginated';
 
 @Injectable()
 export class AgentsDataService {
@@ -13,6 +13,11 @@ export class AgentsDataService {
 
   paginate(page?: number) : Observable<Paginated> {
     return this.api.get(`agent?page=${page}`)
-      .map(resp => resp);
+      // .map(resp => resp);
+  }
+
+  store(agent: Agent) : Observable<any> {
+    return this.api.post('agent', agent)
+      // .map(resp => resp);
   }
 }

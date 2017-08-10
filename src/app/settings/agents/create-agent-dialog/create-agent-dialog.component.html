@@ -1,0 +1,20 @@
+<h2 md-dialog-title>New Agent</h2>
+<form [formGroup]="createAgentForm.formGroup" (ngSubmit)="submit()" novalidate>
+  <md-dialog-content fxLayout="column" fxLayoutGap="20px">
+    <!-- Employee Number -->
+    <md-input-container>
+      <input type="text" name="Employee Number" placeholder="Employee Number" formControlName="employeeNumber" mdInput>
+      <md-error *ngIf="createAgentForm.errors.employeeNumber">{{ createAgentForm.errors.employeeNumber }}</md-error>
+    </md-input-container>
+    <!-- Name -->
+    <md-input-container>
+      <input type="text" name="Name" placeholder="Name" formControlName="name" mdInput>
+      <md-error *ngIf="createAgentForm.errors.name">{{ createAgentForm.errors.name }}</md-error>
+    </md-input-container>
+  </md-dialog-content>
+  <md-dialog-actions *ngIf="!busy" fxLayout="row" fxLayoutAlign="end center">
+    <!-- Can optionally provide a result for the closing dialog. -->
+    <button type="submit" md-button color="primary">Save</button>
+  </md-dialog-actions>
+  <md-spinner *ngIf="busy"></md-spinner>
+</form>

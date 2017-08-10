@@ -9,8 +9,4 @@ import { SettingsService } from './settings.service';
 })
 export class SettingsComponent {
   constructor(private settings: SettingsService) { }
-
-  sendPageEvent(pageEvent: PageEvent) : void {
-    this.settings.sendPageEvent(pageEvent);
-  }
 }

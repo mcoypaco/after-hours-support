@@ -12,22 +12,22 @@ const routes: Routes = [
       {
         path:'',
         loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
-        canLoad: [AuthGuard]
+        canLoad: [AuthGuard],
       },
       {
         path:'evaluation',
         loadChildren: 'app/evaluation/evaluation.module#EvaluationModule',
-        canLoad: [AuthGuard]
+        canLoad: [AuthGuard],
       },
       {
         path:'questionnaires',
         loadChildren: 'app/questionnaire/questionnaire.module#QuestionnaireModule',
-        canLoad: [AuthGuard]
+        canLoad: [AuthGuard],
       },
       {
         path:'settings',
         loadChildren: 'app/settings/settings.module#SettingsModule',
-        canLoad: [AuthGuard]
+        canLoad: [AuthGuard],
       },
     ]
   }

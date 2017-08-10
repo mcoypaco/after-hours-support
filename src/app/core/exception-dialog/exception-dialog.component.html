@@ -1,0 +1,5 @@
+<h2 md-dialog-title class="mat-input-error">{{ data.statusText }}</h2>
+<md-dialog-content>{{ data.message }}</md-dialog-content>
+<md-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+  <button md-button (click)="close()">{{ data.buttonLabel }}</button>
+</md-dialog-actions>

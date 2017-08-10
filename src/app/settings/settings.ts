@@ -7,5 +7,5 @@ export interface Settings {
     total: number;
     term: string;
     pageEventSubscription: Subscription;
-    add() : void
+    createAgentDialogSubscription: Subscription;
 }

@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ApiService {
+  // Todo: always check token every request
   headers: HttpHeaders = new HttpHeaders().set('Authorization', `Bearer ${localStorage.access_token}`)
 
   constructor(private http: HttpClient) { }

@@ -14,7 +14,7 @@
               <md-icon class="material-icon">search</md-icon>
             </button>
           </div>
-          <button md-raised-button color="accent" (click)="settings.add()">Add {{settings.model}}</button>
+          <button md-raised-button color="accent" (click)="settings.addForm()">Add {{settings.model}}</button>
         </md-card-subtitle>
         <!-- List -->
         <md-card-content>
@@ -22,12 +22,12 @@
         </md-card-content>
         <!-- Paginator -->
         <md-card-actions fxLayout="row" *ngIf="settings.total">
-          <md-paginator [length]="settings.total" [pageSize]="settings.perPage" (page)="sendPageEvent($event)"></md-paginator>
+          <md-paginator [length]="settings.total" [pageSize]="settings.perPage" (page)="settings.sendPageEvent($event)"></md-paginator>
         </md-card-actions>
       </md-card>
     </div>
     <!-- FAB -->
-    <button md-fab class="md-fab-bottom-right" mdTooltip="{{settings.model}}" [mdTooltipPosition]="'above'" (click)="settings.add()">
+    <button md-fab class="md-fab-bottom-right" mdTooltip="{{settings.model}}" [mdTooltipPosition]="'above'" (click)="settings.addForm()">
       <md-icon class="material-icon">add</md-icon>
     </button>
   </div>

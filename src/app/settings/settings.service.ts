@@ -11,15 +11,20 @@ export class SettingsService {
   term: string;
   total: number;
 
+  private addFormSource = new Subject<any>();
   private pageEventSource = new Subject<any>();
   
   constructor() { }
 
-  // Todo: Dialog form for creating agent
-  add() { }
+  addForm() : void { 
+    this.addFormSource.next();
+  }
 
+  openAddForm() : Observable<void> {
+    return this.addFormSource.asObservable();
+  }
 
-  sendPageEvent(pageEvent: PageEvent) {
+  sendPageEvent(pageEvent: PageEvent) : void {
     this.pageEventSource.next(pageEvent);
   }
 
