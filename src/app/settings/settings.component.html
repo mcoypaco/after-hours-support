@@ -6,7 +6,7 @@
     <div fxLayout="column" fxFlex.gt.xs="100" fxFlex.md="60" fxFlex.lg="50" fxFlex.xl="40">
       <md-card>
         <md-card-subtitle fxLayout="row" fxLayoutAlign="space-between center">
-          <div fxFlex.xs="100" fxFlex.sm="100" fxFlex="50" fxLayout="row" fxLayoutAlign="start center">
+          <div fxFlex.lt-md="100" fxFlex.gt-md="50" fxLayout="row" fxLayoutAlign="start center">
             <md-input-container fxFlex>
               <input type="text" mdInput placeholder="Search" [(ngModel)]="settings.term">
             </md-input-container>
@@ -14,7 +14,7 @@
               <md-icon class="material-icon">search</md-icon>
             </button>
           </div>
-          <button md-raised-button color="accent" (click)="settings.addForm()">Add {{settings.model}}</button>
+          <button md-raised-button color="accent" (click)="settings.addForm()" fxHide.xs fxHide.sm fxHide.md>Add {{settings.model}}</button>
         </md-card-subtitle>
         <!-- List -->
         <md-card-content>
@@ -27,7 +27,7 @@
       </md-card>
     </div>
     <!-- FAB -->
-    <button md-fab class="md-fab-bottom-right" mdTooltip="{{settings.model}}" [mdTooltipPosition]="'above'" (click)="settings.addForm()">
+    <button md-fab class="md-fab-bottom-right" mdTooltip="{{settings.model}}" [mdTooltipPosition]="'above'" (click)="settings.addForm()" fxHide.gt-md>
       <md-icon class="material-icon">add</md-icon>
     </button>
   </div>
