@@ -8,7 +8,8 @@ const routes: Routes = [
     { 
       path:'',
       loadChildren:'app/home/home.module#HomeModule', 
-      canLoad:[AuthGuard] 
+      canLoad:[AuthGuard],
+      canActivate:[AuthGuard],
     },
     { 
       path:'**', 
