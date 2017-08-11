@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { PageEvent } from '@angular/material';
 import { Observable } from 'rxjs';
 import { Subject }    from 'rxjs/Subject';
@@ -8,13 +9,11 @@ export class SettingsService {
   model: string;
   perPage : number;
   state: string;
-  term: string;
+  searchField: FormControl;
   total: number;
 
   private addFormSource = new Subject<any>();
   private pageEventSource = new Subject<any>();
-  
-  constructor() { }
 
   addForm() : void { 
     this.addFormSource.next();

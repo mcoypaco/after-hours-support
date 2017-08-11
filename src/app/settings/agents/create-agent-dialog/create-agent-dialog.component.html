@@ -1,6 +1,7 @@
 <h2 md-dialog-title>New Agent</h2>
 <form [formGroup]="createAgentForm.formGroup" (ngSubmit)="submit()" novalidate>
   <md-dialog-content fxLayout="column" fxLayoutGap="20px">
+    <app-error [message]="'Employee number already in use.'" *ngIf="hasDuplicate && !busy"></app-error>
     <!-- Employee Number -->
     <md-input-container>
       <input type="text" name="Employee Number" placeholder="Employee Number" formControlName="employeeNumber" mdInput>

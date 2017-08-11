@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
 export interface Settings {
@@ -5,7 +6,7 @@ export interface Settings {
     perPage : number;
     state: string;
     total: number;
-    term: string;
     pageEventSubscription: Subscription;
-    createAgentDialogSubscription: Subscription;
+    createDialogSubscription: Subscription;
+    transactionSubscription: Subscription;
 }

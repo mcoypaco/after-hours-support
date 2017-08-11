@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
 
 import { FormValidationMessage } from '../../../core/form-validation-message';
 import { FormValidationMessageService } from '../../../core/form-validation-message.service';
@@ -7,6 +9,7 @@ import { FormValidationMessageService } from '../../../core/form-validation-mess
 @Injectable()
 export class CreateAgentDialogService implements FormValidationMessage {
   formGroup: FormGroup;
+  private transactionSource = new Subject<any>();
 
   errors: object = {
     'employeeNumber': '',
@@ -20,6 +23,7 @@ export class CreateAgentDialogService implements FormValidationMessage {
     ],
     'name': ['', [
         Validators.required,
+        Validators.pattern('^[^0-9]+$')
       ]
     ],
   }
@@ -30,6 +34,7 @@ export class CreateAgentDialogService implements FormValidationMessage {
     },
     'name': {
       'required': 'Name is required.',
+      'pattern': 'Name cannot contain numbers'
     },
   }
 
@@ -40,5 +45,13 @@ export class CreateAgentDialogService implements FormValidationMessage {
 
     this.form.buildForm();
     this.formGroup = this.form.formGroup;
+  }
+
+  transactionComplete(): void {
+    this.transactionSource.next();
+  }
+
+  pendingTransaction(): Observable<void> {
+    return this.transactionSource.asObservable();
   }
 }

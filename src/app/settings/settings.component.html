@@ -8,7 +8,7 @@
         <md-card-subtitle fxLayout="row" fxLayoutAlign="space-between center">
           <div fxFlex.lt-md="100" fxFlex.gt-md="50" fxLayout="row" fxLayoutAlign="start center">
             <md-input-container fxFlex>
-              <input type="text" mdInput placeholder="Search" [(ngModel)]="settings.term">
+              <input type="text" mdInput placeholder="Search" [formControl]="settings.searchField">
             </md-input-container>
             <button md-icon-button (click)="search()">
               <md-icon class="material-icon">search</md-icon>
