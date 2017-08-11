@@ -8,26 +8,31 @@ const routes: Routes = [
   { 
     path: '', 
     component: HomeComponent,
+    canActivate:[AuthGuard],
     children: [
       {
         path:'',
         loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
         canLoad: [AuthGuard],
+        canActivateChild: [AuthGuard],
       },
       {
         path:'evaluation',
         loadChildren: 'app/evaluation/evaluation.module#EvaluationModule',
         canLoad: [AuthGuard],
+        canActivateChild: [AuthGuard],
       },
       {
         path:'questionnaires',
         loadChildren: 'app/questionnaire/questionnaire.module#QuestionnaireModule',
         canLoad: [AuthGuard],
+        canActivateChild: [AuthGuard],
       },
       {
         path:'settings',
         loadChildren: 'app/settings/settings.module#SettingsModule',
         canLoad: [AuthGuard],
+        canActivateChild: [AuthGuard],
       },
     ]
   }
